@@ -5,9 +5,9 @@ const socketIo = require('socket.io');
 const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
-    cors: {
-        origin: "*",
-    }
+  cors: {
+    origin: "*",
+  }
 });
 const boards = {};
 
@@ -30,6 +30,11 @@ io.on('connection', (socket) => {
       console.log(`Drawing received: ${JSON.stringify(data)}`);
       boards[boardId].push(data);
       socket.to(boardId).emit('drawing', data);
+    });
+
+    socket.on('clear', () => {
+      boards[boardId] = [];
+      socket.to(boardId).emit('clear');
     });
 
     socket.on('disconnect', () => {

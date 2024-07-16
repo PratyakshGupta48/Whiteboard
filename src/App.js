@@ -1,7 +1,33 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import LandingPage from './LandingPage';
 import Whiteboard from './Whiteboard';
+import { useNavigate } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
+import './UnderConstruction.css';
+
+const LandingPage = () => {
+  const navigate = useNavigate();
+
+  const createNewBoard = () => {
+    const boardId = uuidv4();
+    navigate(`/board/${boardId}`);
+  };
+
+  return (
+    <div className="container">
+      <div className="overlay"></div>
+      <div className="stars" aria-hidden="true"></div>
+      <div className="stars2" aria-hidden="true"></div>
+      <div className="stars3" aria-hidden="true"></div>
+      <main className="main">
+        <section className="contact">
+          <h1 className="title">Whiteboard</h1>
+          <div className='sub-title' onClick={createNewBoard}>New Board</div>
+        </section>
+      </main>
+    </div>
+  );
+};
 
 const App = () => {
   return (
