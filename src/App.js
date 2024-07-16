@@ -22,8 +22,11 @@ const LandingPage = () => {
       <main className="main">
         <section className="contact">
           <h1 className="title">Whiteboard</h1>
-          <div className='sub-title' onClick={createNewBoard}>New Board</div>
+          <div className='sub-title' onClick={createNewBoard}>Create New Board</div>
         </section>
+        {/* <section className="contact"> */}
+          <div className='sub-title2' onClick={createNewBoard}>Made By : <a href='https://www.linkedin.com/in/pratyakshgupta48/'>Pratyaksh Gupta</a></div>
+        {/* </section> */}
       </main>
     </div>
   );

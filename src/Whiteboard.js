@@ -31,7 +31,7 @@ const Whiteboard = () => {
 
     const drawGrid = () => {
       const gridSize = 25;
-      ctx.strokeStyle = '#e0e0e0';
+      ctx.strokeStyle = '#f2f2f2';
       ctx.lineWidth = 0.5;
 
       for (let x = 0; x < canvas.width; x += gridSize) {
@@ -135,7 +135,7 @@ const Whiteboard = () => {
     const ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     const gridSize = 20;
-      ctx.strokeStyle = '#e0e0e0';
+      ctx.strokeStyle = '#f2f2f2';
       ctx.lineWidth = 0.5;
 
       for (let x = 0; x < canvas.width; x += gridSize) {
@@ -154,7 +154,7 @@ const Whiteboard = () => {
   };
 
   const copyToClipboard = () => {
-    navigator.clipboard.writeText('https://whiteboard-io.netlify.app/'+boardId).then(() => {
+    navigator.clipboard.writeText('https://whiteboard-io.netlify.app/board/'+boardId).then(() => {
       setIsCopied(true);
       setTimeout(() => {
         setIsCopied(false);
