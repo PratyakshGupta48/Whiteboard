@@ -16,51 +16,40 @@ Real-time collaborative whiteboard backend built with Express.js and Socket.IO.
    npm install
    ```
 
-2. Create a `.env` file based on `env.example`
-
-3. Start the development server:
+2. Start the development server:
    ```bash
    npm run dev
    ```
 
-## Railway Deployment
+## Render Deployment
 
 ### Prerequisites
-- Railway account (sign up at [railway.app](https://railway.app))
-- Railway CLI installed (`npm install -g @railway/cli`)
+- Render account (sign up at [render.com](https://render.com))
+- GitHub repository connected
 
 ### Deployment Steps
 
-1. **Login to Railway:**
-   ```bash
-   railway login
-   ```
-
-2. **Initialize Railway project:**
-   ```bash
-   cd backend
-   railway init
-   ```
-
-3. **Deploy to Railway:**
-   ```bash
-   railway up
-   ```
-
-4. **Get your deployment URL:**
-   ```bash
-   railway status
-   ```
+1. **Go to [render.com](https://render.com)**
+2. **Click "New +" → "Web Service"**
+3. **Connect your GitHub repository**
+4. **Configure the service:**
+   - **Name:** `whiteboard-backend`
+   - **Environment:** `Node`
+   - **Root Directory:** `backend`
+   - **Build Command:** `npm install`
+   - **Start Command:** `npm start`
+   - **Plan:** `Free`
+5. **Click "Create Web Service"**
 
 ### Environment Variables
 
-Railway will automatically set:
-- `PORT` - Railway assigns this automatically
+Render will automatically set:
+- `PORT` - Render assigns this automatically
 - `NODE_ENV` - Set to 'production'
 
 ### Custom Domain (Optional)
 
-1. Go to your Railway project dashboard
+1. Go to your Render project dashboard
 2. Navigate to Settings → Domains
 3. Add your custom domain
 
@@ -79,6 +68,11 @@ Railway will automatically set:
 ## Troubleshooting
 
 - Ensure all dependencies are in `package.json`
-- Check Railway logs: `railway logs`
+- Check Render logs in the dashboard
 - Verify environment variables are set correctly
 - Ensure Node.js version is 18+ (specified in package.json)
+
+## Current Deployment
+
+**Live URL:** https://whiteboard-backend-or3o.onrender.com
+**Status:** ✅ Production Ready

@@ -10,7 +10,7 @@ const io = socketIo(server, {
   }
 });
 
-// Health check endpoint for Railway
+// Health check endpoint for Render
 app.get('/', (req, res) => {
   res.json({ 
     status: 'OK', 

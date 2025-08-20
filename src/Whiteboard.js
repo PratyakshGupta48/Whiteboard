@@ -1,12 +1,13 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import io from 'socket.io-client';
+import config from './config';
 import './styles.css';
 import { FaPencilAlt, FaEraser, FaRegCircle, FaRegSquare, FaShareAlt } from "react-icons/fa";
 import { IoIosColorPalette } from "react-icons/io";
 import { MdOutlineHexagon } from 'react-icons/md';
 
-const socket = io('https://real-time-whiteboard-e7219d7af49a.herokuapp.com');
+const socket = io(config.BACKEND_URL, config.SOCKET_OPTIONS);
 
 const Whiteboard = () => {
   const { boardId } = useParams();
