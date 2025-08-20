@@ -9,6 +9,16 @@ const io = socketIo(server, {
     origin: "*",
   }
 });
+
+// Health check endpoint for Railway
+app.get('/', (req, res) => {
+  res.json({ 
+    status: 'OK', 
+    message: 'Whiteboard Backend is running',
+    timestamp: new Date().toISOString()
+  });
+});
+
 const boards = {};
 
 console.log('Server is starting...');
